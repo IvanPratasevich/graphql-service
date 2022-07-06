@@ -6,7 +6,7 @@ import { UsersAPI } from './modules/users/usersApi';
 import { resolvers } from './resolvers/resolvers';
 
 const start = async () => {
-  const PORT: number = Number(process.env.PORT) || 3000;
+  const PORT: number = Number(process.env.PORT) || 5000;
   const server = new ApolloServer({
     typeDefs: typedefs,
     resolvers,
@@ -22,8 +22,8 @@ const start = async () => {
   const app = express();
   await server.start();
   server.applyMiddleware({ app, path: '/graphql' });
-  app.listen(3000, () => {
-    console.log(`Server is listening on port ${PORT}${server.graphqlPath}`);
+  app.listen(PORT, () => {
+    console.log(`Start server on the ${PORT} port!`);
   });
 };
 
