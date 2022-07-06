@@ -10,17 +10,13 @@ export class UsersAPI extends RESTDataSource {
     request.headers.set('Authorization', `Bearer ${this.context.token}`);
   }
 
-  async getUser(id) {
-    const user = await this.get(`/${encodeURIComponent(id)}`);
-    user.id = user._id;
-    return user;
+  getUser(id) {
+    return this.get(`/${encodeURIComponent(id)}`);
   }
-  async registerUser(userData) {
-    const newUser = await this.post(`/register`, userData.registerUserInput);
-    newUser.id = newUser._id;
-    return newUser;
+  registerUser(userData) {
+    return this.post(`/register`, userData);
   }
-  async loginUser(userData) {
-    return await this.post(`/login`, userData);
+  loginUser(userData) {
+    return this.post(`/login`, userData);
   }
 }

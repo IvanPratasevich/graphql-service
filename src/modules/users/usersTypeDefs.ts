@@ -3,7 +3,7 @@ import { gql } from 'apollo-server-express';
 export const usersTypeDefs = gql`
   type Query {
     user(id: ID!): User
-    getJWT(email: String!, password: String!): JWT
+    jwt(authorizeUserInput: AuthorizeUserInput!): JWT
   }
 
   input RegisterUserInput {
@@ -11,6 +11,11 @@ export const usersTypeDefs = gql`
     lastName: String!
     password: String!
     email: String!
+  }
+
+  input AuthorizeUserInput {
+    email: String!
+    password: String!
   }
 
   type JWT {
@@ -26,6 +31,6 @@ export const usersTypeDefs = gql`
   }
 
   type Mutation {
-    registerUser(registerUserInput: RegisterUserInput!): User!
+    register(registerUserInput: RegisterUserInput!): User
   }
 `;

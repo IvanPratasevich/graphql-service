@@ -3,13 +3,14 @@ export const userResolver = {
     user: async (parent, { id }, { dataSources }) => {
       return dataSources.UsersAPI.getUser(id);
     },
-    getJWT(parent, args, { dataSources }) {
-      return dataSources.UsersAPI.loginUser(args);
+    jwt: (parent, { authorizeUserInput }, { dataSources }) => {
+      return dataSources.UsersAPI.loginUser(authorizeUserInput);
     },
   },
   Mutation: {
-    registerUser(parent, args, { dataSources }) {
-      return dataSources.UsersAPI.registerUser(args);
+    register: (parent, { registerUserInput }, { dataSources }) => {
+      return dataSources.UsersAPI.registerUser(registerUserInput);
     },
   },
+  User: { id: (parent) => parent._id },
 };
