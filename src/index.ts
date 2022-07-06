@@ -4,6 +4,7 @@ import { typedefs } from './typedefs/typedefs';
 import 'dotenv/config';
 import { UsersAPI } from './modules/users/usersApi';
 import { resolvers } from './resolvers/resolvers';
+import { GenresAPI } from './modules/genres/genresAPI';
 
 const start = async () => {
   const PORT: number = Number(process.env.PORT) || 5000;
@@ -13,6 +14,7 @@ const start = async () => {
     dataSources: () => {
       return {
         UsersAPI: new UsersAPI(),
+        GenresAPI: new GenresAPI(),
       };
     },
     context: ({ req }) => {
