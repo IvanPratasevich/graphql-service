@@ -38,8 +38,8 @@ export const genresTypeDefs = gql`
   }
 
   type Mutation {
-    createGenre(createGenreInput: CreateGenreInput): Genre!
-    updateGenre(id: ID!, updateGenreInput: UpdateGenreInput): Genre!
+    createGenre(createGenreInput: CreateGenreInput!): Genre!
+    updateGenre(id: ID!, updateGenreInput: UpdateGenreInput!): Genre!
     deleteGenre(id: ID!): DELETE
   }
 `;

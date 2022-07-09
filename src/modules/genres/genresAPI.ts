@@ -11,8 +11,9 @@ export class GenresAPI extends RESTDataSource {
     request.headers.set('Authorization', `Bearer ${this.context.token}`);
   }
 
-  getGenre(id) {
-    return this.get(`/${encodeURIComponent(id)}`);
+  async getGenre(id) {
+    const genre = await this.get(`/${encodeURIComponent(id)}`);
+    return genre;
   }
   createGenre(newGenreData) {
     return this.post('', newGenreData);
@@ -27,5 +28,9 @@ export class GenresAPI extends RESTDataSource {
 
   updateGenre(id, updateGenre) {
     return this.put(`/${encodeURIComponent(id)}`, updateGenre);
+  }
+
+  async getGenresByIds(genresIds) {
+    return genresIds.map((id) => this.getGenre(id));
   }
 }

@@ -5,6 +5,8 @@ import 'dotenv/config';
 import { UsersAPI } from './modules/users/usersApi';
 import { resolvers } from './resolvers/resolvers';
 import { GenresAPI } from './modules/genres/genresAPI';
+import { BandsAPI } from './modules/bands/bandsAPI';
+import { ArtistsAPI } from './modules/artists/artistsAPI';
 
 const start = async () => {
   const PORT: number = Number(process.env.PORT) || 5000;
@@ -15,6 +17,8 @@ const start = async () => {
       return {
         UsersAPI: new UsersAPI(),
         GenresAPI: new GenresAPI(),
+        BandsAPI: new BandsAPI(),
+        ArtistsAPI: new ArtistsAPI(),
       };
     },
     context: ({ req }) => {
