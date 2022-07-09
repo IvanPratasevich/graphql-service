@@ -12,7 +12,6 @@ export class TracksAPI extends RESTDataSource {
   }
 
   async getTrack(id) {
-    console.log(id);
     const track = await this.get(`/${encodeURIComponent(id)}`);
     return track;
   }
