@@ -7,6 +7,16 @@ import { resolvers } from './resolvers/resolvers';
 import { GenresAPI } from './modules/genres/genresAPI';
 import { BandsAPI } from './modules/bands/bandsAPI';
 import { ArtistsAPI } from './modules/artists/artistsAPI';
+import { AlbumsAPI } from './modules/albums/albumsAPI';
+import { TracksAPI } from './modules/tracks/tracksAPI';
+
+interface IReq {
+  req: {
+    headers: {
+      authorization: string;
+    };
+  };
+}
 
 const start = async () => {
   const PORT: number = Number(process.env.PORT) || 5000;
@@ -19,9 +29,11 @@ const start = async () => {
         GenresAPI: new GenresAPI(),
         BandsAPI: new BandsAPI(),
         ArtistsAPI: new ArtistsAPI(),
+        AlbumsAPI: new AlbumsAPI(),
+        TracksAPI: new TracksAPI(),
       };
     },
-    context: ({ req }) => {
+    context: ({ req }: IReq) => {
       return { token: req.headers.authorization || '' };
     },
   });
