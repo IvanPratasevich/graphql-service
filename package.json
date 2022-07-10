@@ -1,0 +1,42 @@
+{
+  "name": "graphql-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start:dev": "nodemon ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node ./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanPratasevich/graphql-service.git"
+  },
+  "author": "Ivan Pratasevich",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.7.1",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "apollo-datasource-rest": "^3.6.1",
+    "apollo-server-express": "^3.9.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "graphql": "^16.5.0",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  },
+  "bugs": {
+    "url": "https://github.com/IvanPratasevich/graphql-service/issues"
+  },
+  "homepage": "https://github.com/IvanPratasevich/graphql-service#readme"
+}
