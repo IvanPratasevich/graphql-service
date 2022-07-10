@@ -1,5 +1,5 @@
-# Graphql Service
-Description
+# Graphql Service  
+## Description  
 Imagine we have a couple of microservices that are created for the service Musicify, a new wikipedia for Music. We need to provide a comfortable and convenient service   for our users to manage and retrieve data for different entities.  
 
 You can find repository with microservices [here](https://github.com/rolling-scopes-school/node-graphql-service)  
@@ -23,4 +23,9 @@ docker run -d -p 27017:27017 --name MongoDB -e MONGO_INITDB_ROOT_USERNAME=mongoa
 5. Run ```npm run start:dev``` to start application in development mode. 
 
 6. Open http://localhost:3000/graphql in browser.
+
+## Notes:  
+Before starting mutations, you need to get and manually insert the jwt token as in the screenshot:  
+
+![image](https://user-images.githubusercontent.com/85807287/178156411-5bd5fe17-1990-4782-a6b5-42060daa4ae7.png)
 
