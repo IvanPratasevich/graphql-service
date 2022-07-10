@@ -25,7 +25,7 @@ docker run -d -p 27017:27017 --name MongoDB -e MONGO_INITDB_ROOT_USERNAME=mongoa
 6. Open http://localhost:3000/graphql in browser.
 
 ## Notes:  
-Before starting mutations, you need to get and manually insert the jwt token as in the screenshot:  
+Before starting mutations, you need to get and manually insert the jwt token as in screenshot:  
 
 ![image](https://user-images.githubusercontent.com/85807287/178156411-5bd5fe17-1990-4782-a6b5-42060daa4ae7.png)
 
