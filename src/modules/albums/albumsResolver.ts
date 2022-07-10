@@ -1,3 +1,5 @@
+import { createModuleResolutionCache } from 'typescript';
+
 export const albumsResolver = {
   Query: {
     album: (parent, { id }, { dataSources }) => {

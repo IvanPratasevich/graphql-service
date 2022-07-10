@@ -1,9 +1,9 @@
 import 'dotenv/config';
 import { ApolloServer } from 'apollo-server-express';
 import express from 'express';
-import { typedefs } from './typedefs/typedefs';
+import { typedefs } from './modules/typedefs/typedefs';
 import { UsersAPI } from './modules/users/usersApi';
-import { resolvers } from './resolvers/resolvers';
+import { resolvers } from './modules/resolvers/resolvers';
 import { GenresAPI } from './modules/genres/genresAPI';
 import { BandsAPI } from './modules/bands/bandsAPI';
 import { ArtistsAPI } from './modules/artists/artistsAPI';

@@ -30,7 +30,10 @@ export class GenresAPI extends RESTDataSource {
     return this.put(`/${encodeURIComponent(id)}`, updateGenre);
   }
 
-  async getGenresByIds(genresIds) {
-    return genresIds.map((id) => this.getGenre(id));
+  getGenresByIds(genresIds) {
+    if (genresIds && genresIds.length) {
+      return genresIds.map((id) => this.getGenre(id));
+    }
+    return [];
   }
 }

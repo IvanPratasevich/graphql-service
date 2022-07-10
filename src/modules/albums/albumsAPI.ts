@@ -11,8 +11,9 @@ export class AlbumsAPI extends RESTDataSource {
     request.headers.set('Authorization', `Bearer ${this.context.token}`);
   }
 
-  getAlbum(id) {
-    return this.get(`/${encodeURIComponent(id)}`);
+  async getAlbum(id) {
+    const album = await this.get(`/${encodeURIComponent(id)}`);
+    return album;
   }
   createAlbum(newAlbumData) {
     return this.post('', newAlbumData);

@@ -29,7 +29,10 @@ export class ArtistsAPI extends RESTDataSource {
   updateArtist(id, updateArtist) {
     return this.put(`/${encodeURIComponent(id)}`, updateArtist);
   }
-  getArtistsByIds(genresIds) {
-    return genresIds.map((id) => this.getArtist(id));
+  getArtistsByIds(artistsIds) {
+    if (artistsIds && artistsIds.length) {
+      return artistsIds.map((id) => this.getArtist(id));
+    }
+    return [];
   }
 }

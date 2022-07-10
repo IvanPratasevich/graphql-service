@@ -37,6 +37,7 @@ export const tracksResolver = {
     },
 
     album: async ({ albumId }, args, { dataSources }) => {
+      if (!albumId) return null;
       return dataSources.AlbumsAPI.getAlbum(albumId);
     },
   },

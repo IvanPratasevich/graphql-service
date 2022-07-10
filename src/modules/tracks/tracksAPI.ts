@@ -31,6 +31,9 @@ export class TracksAPI extends RESTDataSource {
   }
 
   async getTracksByIds(tracksIds) {
-    return tracksIds.map((id) => this.getTrack(id));
+    if (tracksIds && tracksIds.length) {
+      return tracksIds.map((id) => this.getTrack(id));
+    }
+    return [];
   }
 }

@@ -29,6 +29,9 @@ export class BandsAPI extends RESTDataSource {
     return this.put(`/${encodeURIComponent(id)}`, updateBand);
   }
   getBandsByIds(bandsIds) {
-    return bandsIds.map((id) => this.getBand(id));
+    if (bandsIds && bandsIds.length) {
+      return bandsIds.map((id) => this.getBand(id));
+    }
+    return [];
   }
 }

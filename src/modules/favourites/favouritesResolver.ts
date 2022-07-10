@@ -39,8 +39,8 @@ export const favouritesResolver = {
       return dataSources.BandsAPI.getBandsByIds(bandsIds);
     },
 
-    tracks: async ({ tracksIds }, args, { dataSources }) => {
-      return dataSources.TracksAPI.getTracksByIds(tracksIds);
+    tracks: async ({ trackIds }, args, { dataSources }) => {
+      return dataSources.TracksAPI.getTracksByIds(trackIds);
     },
   },
 };

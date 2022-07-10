@@ -34,11 +34,14 @@ export const bandsResolver = {
           return dataSources.ArtistsAPI.getArtist(member.artist);
         })
       ).then((result) => {
-        return result.map((artist, index) => ({
-          ...artist,
-          instrument: members[index].instrument,
-          years: members[index].years,
-        }));
+        if (members && members.length) {
+          return result.map((artist, index) => ({
+            ...artist,
+            instrument: members[index].instrument,
+            years: members[index].years,
+          }));
+        }
+        return [];
       });
     },
   },
