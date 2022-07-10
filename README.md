@@ -7,7 +7,7 @@ You can find repository with microservices [here](https://github.com/rolling-sco
 ## Instruction:
 1. Clone repo:
  ``` powershell 
-git@github.com:IvanPratasevich/graphql-service.git -b dev 
+git clone git@github.com:IvanPratasevich/graphql-service.git -b dev 
 ```
 2. To install all dependencies use npm install in the root folder
 ``` powershell 
